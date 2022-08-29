@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Ensayo</string>
+    <string name="codigo_pais">Codigo país</string>
+    <string name="login">LOGIN</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="phone">Celular</string>
+    <string name="code">Código</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="ver_video">Ver Video</string>
+    <string name="un_cuento">Un cuento</string>
+</resources>

@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.huawei.agconnect'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.valeria.ensayo"
+        minSdk 29
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            // Signing certificate.
+            storeFile file("Senasoft.jks")
+            // KeyStore password.
+            storePassword "7201587"
+            // Alias.
+            keyAlias "keySenasoft"
+            // Key password.
+            keyPassword "7201587"
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable = true
+        }
+    }
+
+    viewBinding{
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    //Huawei
+    implementation 'com.huawei.agconnect:agconnect-core:1.7.0.300'
+    //Account Kit
+    implementation 'com.huawei.hms:hwid:6.4.0.301'
+    //Auth Service
+    implementation 'com.huawei.agconnect:agconnect-auth:1.7.1.300'
+    //Cloud DB
+    implementation 'com.huawei.agconnect:agconnect-cloud-database:1.5.4.300'
+    //Push kit
+    implementation 'com.huawei.hms:push:6.3.0.304'
+    //Ads kit
+    implementation 'com.huawei.hms:ads-prime:3.4.55.302'
+    implementation 'com.huawei.hms:ads-omsdk:1.3.35'
+    //Video kit
+    implementation 'com.huawei.hms:videokit-player:1.0.12.300'
+    implementation 'com.huawei.hms:dynamic-loader-fallback:1.0.17.300'
+    //Analitycs kit
+    implementation 'com.huawei.hms:hianalytics:6.3.0.302'
+    //Audio Kit
+    implementation 'com.huawei.hms:audiokit-player:1.1.0.300'
+    //Maps kit
+    implementation 'com.huawei.hms:maps:6.5.1.300'
+    implementation 'com.huawei.hms:maps-basic:6.5.1.300'
+    implementation 'com.huawei.hms:location:6.0.0.302'
+    implementation 'com.huawei.hms:site:6.0.1.303'
+    //Otros
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
